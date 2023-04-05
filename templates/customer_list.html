@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block body %}
+<link
+  rel="stylesheet"
+  href="{{url_for('static', filename='css/customer_list.css')}}"
+/>
+
+<div class="card-container">
+  {% for customer in customer_info %}
+  <div class="c-card shadow-sm">
+    <div class="card-head">
+      <div class="circle">
+        <img class="mb-4" id="status" src="{{url_for('static',filename='images/login_panel logo.jpg')}}" style="border-radius: 50%;">
+
+      </div>
+      <div class="btns">
+        <a
+          href="/update/{{customer.Sno}}"
+          type="button"
+          class="btn btn-outline-success btn-sm mx-1"
+          ><i class="fa-solid fa-pen-to-square"></i
+        ></a>
+        <a
+          href="/delete/{{customer.Sno}}"
+          type="button"
+          class="btn btn-outline-danger btn-sm mx-1"
+          ><i class="fa-solid fa-trash"></i
+        ></a>
+      </div>
+    </div>
+
+    <div class="info">
+      <h3>Name: <span id="Name-text">{{customer.Name}}</span></h3>
+      <h4>Son of: <span>{{customer.Father_Name}}</span></h4>
+      <h4>Place: <span>{{customer.Place}}</span></h4>
+      <h4>
+        Phone No:
+        <span style="letter-spacing: 0.7px">{{customer.Phone_No_1}}</span>,
+        <span style="letter-spacing: 0.7px">{{customer.Phone_No_2}}</span>
+      </h4>
+
+      <h4>Model No: <span>{{customer.Model_no}}</span></h4>
+
+      <div class="product_dets">
+        <h4 class="product-item">
+          Capacity: <span>{{customer.capacity}}</span>
+        </h4>
+        <h4 class="product-item">Size: <span>{{customer.size}}</span></h4>
+      </div>
+      <div class="amounts">
+        <h4 id="total" class="amt-items" style="font-weight: 700">
+          Total <span>{{customer.Total_amt}}</span>
+        </h4>
+        <h4 id="paid" class="amt-items" style="font-weight: 700">
+          Paid <span>{{customer.Paid_amt}}</span>
+        </h4>
+        <h4 class="amt-items" style="font-weight: 700">
+          To Pay <span id="remaining">{{customer.remaining_amt}}</span>
+        </h4>
+      </div>
+      <a href="/show/{{customer.Sno}}" class="btn btn-dark mt-1 detail-btn"
+        >Details</a
+      >
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+<script src="{{url_for('static',filename='js/search.js')}}"></script>
+<!-- <script>
+  let remaining = document.getElementById("remaining").innerHTML;
+
+  console.log(status);
+
+  let remaining_amt = Number(remaining);
+  console.log(typeof remaining_amt);
+  if (remaining_amt <= 0) {
+    document.getElementById("status").src =
+      "{{url_for('static', filename='images/paid-staus-1.png')}}";
+  } else {
+    document.getElementById("status").src =
+      "{{url_for('static', filename='images/paid-staus-2.png')}}";
+  }
+</script> -->
+{% endblock %}

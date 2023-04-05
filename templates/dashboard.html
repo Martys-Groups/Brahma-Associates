@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+    <div class="container-fluid px-5" style="display: flex; align-items: center; width: 100%;">
+
+    <!-- <button class="btn btn-primary" onclick="open()" id="button">Add Customer</button> -->
+        <form action="/add_customer" id="form" class="w-100" method="post" >
+          <h2  style="text-align: center; font-weight: 700; margin-top: 6rem; ">Add Customer Details</h2>
+          <hr>
+      
+            <div class="input-group mb-3 mt-5 ">
+              
+                <span class="input-group-text bg-dark text-light shadow-sm" id="inputGroup-sizing-default">Name</span>
+                <input type="text" name="c-name" placeholder="Customer's Name..." class="form-control shadow-sm"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required >
+                <span class="input-group-text bg-dark text-light ms-3 shadow-sm" id="inputGroup-sizing-default">Son of.</span>
+                <input type="text" name="F-name" placeholder="Fathers's Name..." class="form-control shadow-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+              </div>
+
+            <div class="input-group mb-3">
+               
+            </div>
+            <div class="input-group mb-3 shadow-sm">
+                <span class="input-group-text bg-dark text-light" id="inputGroup-sizing-default">Place</span>
+                <input type="text" name="c-place" placeholder="Customers's address..." class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+            </div>
+            
+            <div class="input-group mb-3 ">
+                <span class="input-group-text bg-dark text-light shadow-sm" id="inputGroup-sizing-default">Phone No.</span>
+                <input type="number" class="form-control shadow-sm" maxlength="10" minlength="10" name="phone-number-1" aria-label="Sizing example input" placeholder="Mobile No" aria-describedby="inputGroup-sizing-default" required>
+                <span class="input-group-text ms-5 bg-dark text-light shadow-sm" id="inputGroup-sizing-default">Phone No.</span>
+                <input type="number" class="form-control shadow-sm" maxlength="10"  minlength="10" name="phone-number-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Mobile No 2(optional)">
+            </div>
+            
+            <h2 class="mt-5 mb-4" style="text-align: center; font-weight: 700; ">Add Product Details</h2>
+            <hr>
+            <div class="input-group mb-3">
+              <span class="input-group-text bg-dark text-light shadow-sm">Model no.</span>
+              <input type="text" name="model_no" aria-label="Last name" class="form-control shadow-sm">
+              <span class="input-group-text bg-dark text-light ms-4 shadow-sm" id="inputGroup-sizing-default">Capacity</span>
+              <input type="text" name="capacity" placeholder="Capacity" class="form-control shadow-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+              <span class="input-group-text bg-dark text-light ms-4" id="inputGroup-sizing-default">Size</span>
+              <input type="text" name="size" placeholder="Size(height x width)" class="form-control shadow-sm" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+            </div>
+            
+            <div class="input-group mb-3">
+                
+            </div>
+
+
+            
+            
+            <!-- <div class="input-group w-75 mt-3">
+              <span class="input-group-text bg-dark text-light shadow-sm">Total</span>
+              <input type="number" name="total_amt" aria-label="First name" class="form-control shadow-sm">
+              <span class="input-group-text bg-dark text-light ms-5 shadow-sm">Paid</span>
+              <input type="number" name="paid_amt" aria-label="Last name" class="form-control shadow-sm">
+            </div>  -->
+
+            <div class="sbm-btn" style="display: flex;justify-content: center;align-items: center;">
+            <button type="submit" class="btn btn-dark mt-3 mb-5 px-4 " style="border-radius: 0;">Submit</button>
+        </div>
+        </form>
+    </div>
+    
+
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col">Serial</th>
+            <th scope="col">Name</th>
+            <th scope="col">F-name</th>
+            <th scope="col">Mob No.</th>
+            <th scope="col">Mob No.</th>
+            <th scope="col">Model</th>
+            <th scope="col">Capacity</th>
+            <th scope="col">Size</th>
+            <!-- <th scope="col">Total</th>
+            <th scope="col">Paid</th>
+            <th scope="col">Receipt</th> -->
+            <th scope="col">Actions</th>
+  
+
+
+          </tr>
+        </thead>
+        <tbody>
+    {% for customer in customer_info %}
+
+          <tr>
+            <!-- <th scope="row">{{customer.Sno}}</th> -->
+            <td>{{customer.Sno}}</td>
+            <td>{{customer.Name}}</td>
+            <td>{{customer.Father_Name}}</td>
+            <td>{{customer.Phone_No_1}}</td>
+            <td>{{customer.Phone_No_2}}</td>
+            <td>{{customer.Model_no}}</td>
+            <td>{{customer.capacity}}</td>
+            <td>{{customer.size}}</td>
+            <!-- <td>{{customer.Total_amt}}</td>
+            <td>{{customer.Paid_amt}}</td>
+            <td>{{customer.remaining_amt}}</td> -->
+            <td>
+            <a class="btn btn-sm  btn-outline-danger"  href="/delete/{{customer.Sno}}"><i class="fa-solid fa-trash"></i></a>
+            <a class="btn btn-sm btn-outline-success"  href="/update/{{customer.Sno}}"><i class="fa-solid fa-pen-to-square"></i></a>
+          </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+  {% endblock %}
+   
+<script>
+  // const open = () =>{
+
+  //   form = document.getElementById('form').style.display = 'block';
+  // }
+
+
+</script>
+    
+    
+    
+    
+ 

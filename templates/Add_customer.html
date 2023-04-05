@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block body %}
+    
+    <div class="container-fluid px-5" style="display: flex; align-items: center; height: 90vh; width: 100%;">
+        <form action="/add_customer" class="w-100" method="post" >
+          <h2  style="text-align: center; font-weight: 700; margin-top: 5rem; ">Customer Details</h2>
+          
+            <div class="input-group mb-3 mt-5">
+              
+                <span class="input-group-text bg-dark text-light" id="inputGroup-sizing-default">Name</span>
+                <input type="text" name="c-name" placeholder="Customer's Name..." class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required >
+                <span class="input-group-text bg-dark text-light ms-3" id="inputGroup-sizing-default">Son of.</span>
+                <input type="text" name="F-name" placeholder="Fathers's Name..." class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+              </div>
+
+            <div class="input-group mb-3">
+               
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-dark text-light" id="inputGroup-sizing-default">Place</span>
+                <input type="text" name="c-place" placeholder="Customers's address..." class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+            </div>
+            
+            <div class="input-group mb-3 ">
+                <span class="input-group-text bg-dark text-light" id="inputGroup-sizing-default">Phone No.</span>
+                <input type="number" class="form-control" maxlength="10" minlength="10" name="phone-number-1" aria-label="Sizing example input" placeholder="Mobile No" aria-describedby="inputGroup-sizing-default" required>
+                <span class="input-group-text ms-5 bg-dark text-light" id="inputGroup-sizing-default">Phone No.</span>
+                <input type="number" class="form-control" maxlength="10"  minlength="10" name="phone-number-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Mobile No 2(optional)">
+            </div>
+            <h2 class="mt-5" style="text-align: center; font-weight: 700; ">Product Details</h2>
+            <div class="input-group mb-3">
+              <span class="input-group-text bg-dark text-light">Model no.</span>
+              <input type="text" name="model_no" aria-label="Last name" class="form-control">
+              <span class="input-group-text bg-dark text-light ms-4" id="inputGroup-sizing-default">Capacity</span>
+              <input type="text" name="Occupation" placeholder="Occupation..." class="form-control " aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+              <span class="input-group-text bg-dark text-light ms-4" id="inputGroup-sizing-default">Size</span>
+              <input type="text" name="Occupation" placeholder="Occupation..." class="form-control " aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+            </div>
+            
+            <div class="input-group mb-3">
+                
+            </div>
+
+
+            
+            
+            <div class="input-group w-75 mt-3">
+              <span class="input-group-text bg-dark text-light">Total</span>
+              <input type="number" name="total_amt" aria-label="First name" class="form-control">
+              <span class="input-group-text bg-dark text-light ms-5">Paid</span>
+              <input type="number" name="paid_amt" aria-label="Last name" class="form-control">
+            </div> 
+            
+            <button type="submit" class="btn btn-dark mt-5">Submit</button>
+
+        </form>
+    </div>
+    
+  {% endblock %}
+    <!-- <div class="customer">
+      {% for customer in customer_info %}
+      <div class="card">
+        <h1>{{customer.Name}}</h1>
+      </div> -->
+      <!-- {% endfor %}
+    </div> -->
+    
+    
+    
+    
+    
+ 

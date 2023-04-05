@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
+
+<div class="container-fluid h-100 row">
+    <h1 class="heading" style="text-align: center; color: #161616;">Brahma <span style="color:#fff;"> Associates</span></h1>
+    <div class="leftside col-6">
+        <h1>Add Customer</h1>
+        <h1>Data</h1>
+        <p>Click On the button and fill all the required info in and just click the submit button to proceed</p>
+        <a href="/add_customer" class="btn btn-dark">Create Customer</a>
+    </div>
+    <div class="rightside col-6">
+        <h1>View Customer</h1>
+        <h1>Data</h1>
+        <p>Click On the button and See the saved customers list and click on the details button in the card to view more details</p>
+        <a href="/customer_list" class="btn btn-light">Customer List</a>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Poppins;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 3rem;
+    background: #222222;
+
+}
+.logo h1 a{
+    color: #fff;
+}
+header nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+header nav ul li{
+    margin-right: 2rem;
+    
+}
+header nav ul li a{
+    color: #fff;
+
+}

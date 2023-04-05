@@ -1,0 +1,12 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri":"sqlite:///customer_data.db",
+        "production_uri":"sqlite:///customer_data.db",
+        "login_logo":"images/login_panel logo.jpg",
+        "Username":"Brahma_Associates",
+        "user_pass":"marty1234"
+        
+    }
+}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <form action="/update" method="post" style="margin-top: 10rem;">
+    <input type="text" class="form-control shadow-sm" value="{{customer.Name}}" name="c-name" readonly>
+    <input type="text" class="form-control shadow-sm" value="{{customer.Total_amt}}" name="Total_amt" readonly >
+    <input type="text" class="form-control shadow-sm" value="{{customer.Paid_amt}}" name="old_Paid" readonly >
+    <input type="text" class="form-control shadow-sm" value="{{customer.paid_amt}}" name="paid">
+
+    <div class="btn">
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+</form>
+</div>
+{% endblock %}
